@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dongduk.cs.ssd.dao.mybatis.mapper.SupportMapper">
+
+	<cache />
+	
+	<select id="getSupport" parameterType="hashMap" resultType="Support">
+		SELECT
+			USERNAME,
+			PROJECTID,
+			PRODUCTID,
+			AMOUNT,
+			SUPPORTDATE,
+			PAYMENTOPTION,
+			REQUEST,
+			PROJECTNAME,
+			PRODUCTNAME,
+			SUPPORTERNAME,
+			PHONENUM,
+			SHIPADDRESS
+		FROM SUPPORT
+		WHERE USERNAME = #{username} AND PROJECTID = #{projectId}
+	</select>
+	
+	<select id="getSupports" resultType="Support">
+		SELECT
+			USERNAME,
+			PROJECTID,
+			PRODUCTID,
+			AMOUNT,
+			SUPPORTDATE,
+			PAYMENTOPTION,
+			REQUEST,
+			PROJECTNAME,
+			PRODUCTNAME,
+			SUPPORTERNAME,
+			PHONENUM,
+			SHIPADDRESS
+		FROM SUPPORT
+	</select>
+	
+	<select id="getSupportsByProject" resultType="Support">
+		SELECT
+			USERNAME,
+			PROJECTID,
+			PRODUCTID,
+			AMOUNT,
+			SUPPORTDATE,
+			PAYMENTOPTION,
+			REQUEST,
+			PROJECTNAME,
+			PRODUCTNAME,
+			SUPPORTERNAME,
+			PHONENUM,
+			SHIPADDRESS
+		FROM SUPPORT
+		WHERE PROJECTID = #{projectId}
+		ORDER BY SUPPORTDATE DESC
+	</select>
+	
+	<select id="getSupportsByUsername" resultType="Support">
+		SELECT
+			USERNAME,
+			PROJECTID,
+			PRODUCTID,
+			AMOUNT,
+			SUPPORTDATE,
+			PAYMENTOPTION,
+			REQUEST,
+			PROJECTNAME,
+			PRODUCTNAME,
+			SUPPORTERNAME,
+			PHONENUM,
+			SHIPADDRESS
+		FROM SUPPORT
+		WHERE USERNAME = #{username}
+		ORDER BY SUPPORTDATE DESC
+	</select>
+	
+	<insert id="insertSupport" parameterType="Support">
+		INSERT INTO SUPPORT (USERNAME, PROJECTID, PRODUCTID, AMOUNT, SUPPORTDATE, PAYMENTOPTION,
+						 REQUEST, PROJECTNAME, PRODUCTNAME, SUPPORTERNAME, PHONENUM, SHIPADDRESS)
+		VALUES (#{username}, #{projectId}, #{productId}, #{amount}, #{supportDate}, #{paymentOption},
+			#{request}, #{projectName}, #{productName}, #{supporterName}, #{phonenum}, #{shipAddress})
+	</insert>
+	
+	<delete id="removeSupport" parameterType="hashMap">
+    	DELETE FROM SUPPORT
+		WHERE USERNAME = #{username} AND PROJECTID = #{projectId}
+	</delete>
+	
+</mapper>

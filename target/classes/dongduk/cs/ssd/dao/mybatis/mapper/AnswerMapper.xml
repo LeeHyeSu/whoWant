@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dongduk.cs.ssd.dao.mybatis.mapper.AnswerMapper">
+
+	<cache />
+	
+	<select id="getAnswer" resultType="Answer">
+		SELECT
+			INQUIRYID,
+			USERNAME,
+			ANSWER,
+			ANSDATE
+		FROM ANSWER
+		WHERE INQUIRYID = #{inquiryId}
+	</select>
+	
+	<insert id="insertAnswer" parameterType="Answer">
+		INSERT INTO ANSWER (INQUIRYID, USERNAME, ANSWER, ANSDATE)
+		VALUES (#{inquiryId}, #{username}, #{answer}, TO_DATE(#{ansDate}, 'YYYY-MM-DD HH24:MI'))
+	</insert>
+	
+</mapper>

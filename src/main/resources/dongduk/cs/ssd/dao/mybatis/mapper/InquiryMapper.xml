@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dongduk.cs.ssd.dao.mybatis.mapper.InquiryMapper">
+
+	<cache />
+	
+	<select id="getInquiry" resultType="Inquiry">
+		SELECT
+			INQUIRYID,
+			TITLE,
+			CATEGORY,
+			QUESTION,
+			INQDATE,
+			ISANSWER,
+			USERNAME,
+			PROJECTID,
+			ISSECRET
+		FROM INQUIRY
+		WHERE INQUIRYID = #{inquiryId}
+	</select>
+	
+	<select id="getInquiryByProject" resultType="Inquiry">
+		SELECT
+			INQUIRYID,
+			TITLE,
+			CATEGORY,
+			QUESTION,
+			INQDATE,
+			ISANSWER,
+			USERNAME,
+			PROJECTID,
+			ISSECRET
+		FROM INQUIRY
+		WHERE PROJECTID = #{projectId}
+		ORDER BY INQUIRYID DESC
+	</select>
+	
+	<select id="getInquiryByUsername" resultType="Inquiry">
+		SELECT
+			INQUIRYID,
+			TITLE,
+			CATEGORY,
+			QUESTION,
+			INQDATE,
+			ISANSWER,
+			USERNAME,
+			PROJECTID,
+			ISSECRET
+		FROM INQUIRY
+		WHERE USERNAME = #{username}
+		ORDER BY INQUIRYID DESC
+	</select>
+	
+	<insert id="insertInquiry" parameterType="Inquiry">
+		INSERT INTO INQUIRY (INQUIRYID, TITLE, CATEGORY, QUESTION,
+			INQDATE, ISANSWER, USERNAME, PROJECTID, ISSECRET)
+		VALUES (#{inquiryId}, #{title}, #{category}, #{question}, TO_DATE(#{inqDate}, 'YYYY-MM-DD HH24:MI'),
+			#{isAnswer}, #{username}, #{projectId}, #{isSecret})
+	</insert>
+	
+	<update id="updateInquiry" parameterType="Int">
+		UPDATE INQUIRY SET
+			ISANSWER = 1
+		WHERE INQUIRYID = #{inquiryId}
+	</update>
+	
+</mapper>

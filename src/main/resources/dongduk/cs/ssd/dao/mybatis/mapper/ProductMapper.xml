@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dongduk.cs.ssd.dao.mybatis.mapper.ProductMapper">
+
+	<cache />
+	
+	<select id="getProduct" resultType="Product">
+		SELECT
+			PRODUCTID,
+			NAME,
+			DESCRIPTION,
+			PRICE,
+			PROJECTID,
+			QUANTITY,
+			MEMBER
+		FROM PRODUCT
+		WHERE PRODUCTID = #{productId}
+	</select>
+	
+	<select id="getProductsByProject" resultType="Product">
+		SELECT
+			PRODUCTID,
+			NAME,
+			DESCRIPTION,
+			PRICE,
+			PROJECTID,
+			QUANTITY,
+			MEMBER
+		FROM PRODUCT
+		WHERE PROJECTID = #{projectId}
+	</select>
+	
+	<insert id="insertProduct" parameterType="Product">
+		INSERT INTO PRODUCT (PRODUCTID, NAME, DESCRIPTION, PRICE, PROJECTID, QUANTITY, MEMBER)
+		VALUES (#{productId}, #{name}, #{description}, #{price}, #{projectId}, #{quantity}, #{member})
+	</insert>
+	
+	<update id="updateProduct" parameterType="Product">
+		UPDATE PRODUCT SET
+			PRODUCTID = #{productId},
+			NAME = #{name},
+			DESCRIPTION = #{description},
+			PRICE = #{price},
+			PROJECTID = #{projectId},
+			QUANTITY = #{quantity},
+			MEMBER = #{member}
+		WHERE PRODUCTID = #{productId}
+	</update>
+	
+	<update id="updateProductBySupport" parameterType="hashMap">
+		UPDATE PRODUCT SET
+			MEMBER = MEMBER + #{member},
+			QUANTITY = QUANTITY + #{quantity}
+		WHERE PRODUCTID = #{productId}
+	</update>
+	
+	<delete id="removeProduct" parameterType="Int">
+    	DELETE FROM PRODUCT
+		WHERE PRODUCTID = #{productId}
+	</delete>
+	
+</mapper>

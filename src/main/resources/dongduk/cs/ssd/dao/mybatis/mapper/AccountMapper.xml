@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dongduk.cs.ssd.dao.mybatis.mapper.AccountMapper">
+
+	<cache />
+	
+	<select id="getAccountByUsername" resultType="Account">
+		SELECT USERNAME,
+			PASSWORD,
+			NAME,
+			PHONENUM,
+			POSTCODE,
+			ADDRESS,
+			DETAILADDRESS,
+			INTRO,
+			JOINDATE,
+			ISADMIN
+		FROM ACCOUNT
+   	 	WHERE USERNAME = #{username}
+	</select>
+	
+	<select id="getAccountByUsernameAndPassword" parameterType="hashMap" resultType="Account">
+	 	SELECT USERNAME,
+			PASSWORD,
+			NAME,
+			PHONENUM,
+			POSTCODE,
+			ADDRESS,
+			DETAILADDRESS,
+			INTRO,
+			JOINDATE,
+			ISADMIN
+		FROM ACCOUNT
+   	 	WHERE USERNAME = #{username} AND PASSWORD = #{password}
+   	</select>
+   	 
+   	<select id="getUsernameList" resultType="java.lang.String">
+    	SELECT USERNAME
+    	FROM ACCOUNT 
+ 	</select>
+  
+  	<insert id="insertAccount" parameterType="Account">
+  	 	INSERT INTO ACCOUNT
+  	 		(USERNAME, PASSWORD, NAME, PHONENUM, POSTCODE, ADDRESS, DETAILADDRESS, INTRO, JOINDATE, ISADMIN)
+  	 	VALUES
+  	 		(#{username}, #{password}, #{name}, #{phonenum}, #{postcode}, #{address}, #{detailAddress}, #{intro}, #{joindate}, #{isadmin})
+  	</insert>
+  	
+  	<update id="updateAccount" parameterType="Account">
+  		UPDATE ACCOUNT SET
+  			USERNAME = #{username},
+  			PASSWORD = #{password},
+  			NAME = #{name},
+  			PHONENUM = #{phonenum},
+  			POSTCODE = #{postcode},
+  			ADDRESS = #{address},
+  			DETAILADDRESS = #{detailAddress},
+  			INTRO = #{intro}
+  		WHERE USERNAME = #{username}			
+  	</update>
+  	
+  	<delete id="removeAccount" parameterType="String">
+    	DELETE FROM ACCOUNT
+		WHERE USERNAME = #{username}
+	</delete>
+  
+</mapper>

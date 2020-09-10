@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dongduk.cs.ssd.dao.mybatis.mapper.ProjectMapper">
+
+	<cache />
+	
+	<select id="getProject" resultType="Project">
+		SELECT
+			PROJECTID,
+			NAME,
+			IMAGE,
+			DESCRIPTION,
+			GOALAMOUNT,
+			CURRENTAMOUNT,
+			SUPPORTERNUM,
+			DEADLINE,
+			STATE,
+			USERNAME,
+			CATEGORY
+		FROM PROJECT
+		WHERE PROJECTID = #{projectId}
+	</select>
+	
+	<select id="getProjectList" resultType="Project">
+		SELECT
+			PROJECTID,
+			NAME,
+			IMAGE,
+			DESCRIPTION,
+			GOALAMOUNT,
+			CURRENTAMOUNT,
+			SUPPORTERNUM,
+			DEADLINE,
+			STATE,
+			USERNAME,
+			CATEGORY
+		FROM PROJECT
+		<![CDATA[WHERE STATE = 'ongoing' AND ROWNUM <= 8]]>
+		ORDER BY CURRENTAMOUNT DESC
+	</select>
+	
+	<select id="getAllProjects" resultType="Project">
+		SELECT
+			PROJECTID,
+			NAME,
+			IMAGE,
+			DESCRIPTION,
+			GOALAMOUNT,
+			CURRENTAMOUNT,
+			SUPPORTERNUM,
+			DEADLINE,
+			STATE,
+			USERNAME,
+			CATEGORY
+		FROM PROJECT
+		ORDER BY PROJECTID DESC
+	</select>
+	
+	<select id="getProjectsByCategory" resultType="Project">
+		SELECT
+			PROJECTID,
+			NAME,
+			IMAGE,
+			DESCRIPTION,
+			GOALAMOUNT,
+			CURRENTAMOUNT,
+			SUPPORTERNUM,
+			DEADLINE,
+			STATE,
+			USERNAME,
+			CATEGORY
+		FROM PROJECT
+		WHERE CATEGORY = #{category}
+	</select>
+	
+	<select id="getProjectsByUsername" resultType="Project">
+		SELECT
+			PROJECTID,
+			NAME,
+			IMAGE,
+			DESCRIPTION,
+			GOALAMOUNT,
+			CURRENTAMOUNT,
+			SUPPORTERNUM,
+			DEADLINE,
+			STATE,
+			USERNAME,
+			CATEGORY
+		FROM PROJECT
+		WHERE USERNAME = #{username}
+		ORDER BY PROJECTID DESC
+	</select>
+	
+	<select id="searchProjects" parameterType="String" resultType="Project">
+		SELECT
+			PROJECTID,
+			NAME,
+			IMAGE,
+			DESCRIPTION,
+			GOALAMOUNT,
+			CURRENTAMOUNT,
+			SUPPORTERNUM,
+			DEADLINE,
+			STATE,
+			USERNAME,
+			CATEGORY
+		FROM PROJECT
+		WHERE NAME LIKE #{paramValue} OR DESCRIPTION LIKE #{paramValue}
+	</select>
+	
+	<insert id="insertProject" parameterType="Project">
+		INSERT INTO PROJECT (PROJECTID, NAME, IMAGE, DESCRIPTION, 
+			GOALAMOUNT, CURRENTAMOUNT, SUPPORTERNUM, DEADLINE,
+			STATE, USERNAME, CATEGORY)
+		VALUES (#{projectId}, #{name}, #{image}, #{description},
+			#{goalAmount}, #{currentAmount}, #{supporterNum}, TO_DATE(#{deadline}, 'YYYY-MM-DD'),
+			#{state}, #{username}, #{category})
+	</insert>
+	
+	<update id="updateProject" parameterType="Project">
+		UPDATE PROJECT SET
+			PROJECTID = #{projectId},
+			NAME = #{name},
+			IMAGE = #{image},
+			DESCRIPTION = #{description},
+			GOALAMOUNT = #{goalAmount},
+			DEADLINE = #{deadline},
+			USERNAME = #{username},
+			CATEGORY = #{category}
+		WHERE PROJECTID = #{projectId}
+	</update>
+	
+	<update id="updateProjectBySupport" parameterType="hashMap">
+		UPDATE PROJECT SET
+			CURRENTAMOUNT = CURRENTAMOUNT + #{amount},
+			SUPPORTERNUM = SUPPORTERNUM + #{num}
+		WHERE PROJECTID = #{projectId}
+	</update>
+	
+	<delete id="removeProject" parameterType="Int">
+    	DELETE FROM PROJECT
+		WHERE PROJECTID = #{projectId}
+	</delete>
+	
+	<update id="closeProject" parameterType="Date">
+		<![CDATA[
+    	 UPDATE PROJECT SET STATE = 'CLOSE'
+    	 WHERE DEADLINE <= #{curTime}
+    	]]>
+	</update>
+	
+</mapper>
