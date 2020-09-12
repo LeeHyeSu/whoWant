@@ -88,13 +88,16 @@
        - 내가 올린 프로젝트 후원 현황 보기     
        
 ![나의프로젝트](https://user-images.githubusercontent.com/37262132/92996860-c5501900-f549-11ea-8c06-89027cfbf4c1.JPG)
+
+       - 내가 올린 프로젝트 목록 보기
+       
+       - [프로젝트 등록](#1.-프로젝트-올리기) / 수정 / 삭제
+       
 ![나의후원현황](https://user-images.githubusercontent.com/37262132/92996864-c719dc80-f549-11ea-8559-66e4bf95eda9.JPG)       
        
-       - 내가 올린 프로젝트 / 내가 후원한 프로젝트 조회    
+       - 내가 후원한 프로젝트 목록 보기    
        
-       - 프로젝트 등록 / 수정 / 삭제
-       
-       - 프로젝트 후원    
+       - [프로젝트 후원](#2.-프로젝트-후원) 
 
 ![카테고리1](https://user-images.githubusercontent.com/37262132/92996883-ee70a980-f549-11ea-8fab-4958c6448b9f.JPG)
 ![카테고리2](https://user-images.githubusercontent.com/37262132/92996884-efa1d680-f549-11ea-95b3-7387bf88a061.JPG)
