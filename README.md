@@ -63,52 +63,52 @@
 ![회원가입2](https://user-images.githubusercontent.com/37262132/92996902-1b24c100-f54a-11ea-893c-164852f62b06.JPG)
 ![회원가입3](https://user-images.githubusercontent.com/37262132/92996903-1bbd5780-f54a-11ea-9ad8-be1d958949cf.JPG)
 
-       - 회원가입 
+   - 회원가입 
 
 ![프로젝트상세보기1](https://user-images.githubusercontent.com/37262132/92996892-08aa8780-f54a-11ea-8d6c-fb660c03b963.JPG)
 ![프로젝트상세보기2](https://user-images.githubusercontent.com/37262132/92996893-09431e00-f54a-11ea-9bcf-f7447cd779e9.JPG)
 ![프로젝트상세보기3](https://user-images.githubusercontent.com/37262132/92996894-0a744b00-f54a-11ea-9aea-7c3336165747.JPG)
 ![프로젝트상세보기4](https://user-images.githubusercontent.com/37262132/92996896-0ba57800-f54a-11ea-9cb1-176cf6d40818.JPG)
 
-       - 프로젝트 검색 / 조회
+   - 프로젝트 검색 / 조회
        
 #### 2. 회원
 ![로그인](https://user-images.githubusercontent.com/37262132/92996808-4fe44880-f549-11ea-8a14-b5c04507e5ef.JPG)
      
-       - 로그인 / 로그아웃    
+   - 로그인 / 로그아웃    
   
 ![내정보조회](https://user-images.githubusercontent.com/37262132/92996816-61c5eb80-f549-11ea-89c7-c260300e83bb.JPG)
 ![내정보수정1](https://user-images.githubusercontent.com/37262132/92996820-6ab6bd00-f549-11ea-83e0-8ceb260a572d.JPG)
 
-       - 내정보조회 / 수정 / 탈퇴      
+   - 내정보조회 / 수정 / 탈퇴      
 
 ![후원현황](https://user-images.githubusercontent.com/37262132/92996839-96d23e00-f549-11ea-83be-668edaace570.JPG)
 ![후원현황상세보기](https://user-images.githubusercontent.com/37262132/92996841-989c0180-f549-11ea-8086-a9686edf696e.JPG)
        
-       - 내가 올린 프로젝트 후원 현황 보기     
+   - 내가 올린 프로젝트 후원 현황 보기     
        
 ![나의프로젝트](https://user-images.githubusercontent.com/37262132/92996860-c5501900-f549-11ea-8c06-89027cfbf4c1.JPG)
 
-       - 내가 올린 프로젝트 목록 보기
+   - 내가 올린 프로젝트 목록 보기
        
-       - [프로젝트 등록](#1.-프로젝트-올리기) / 수정 / 삭제
+   - [프로젝트 등록](#1.-프로젝트-올리기) / 수정 / 삭제
        
 ![나의후원현황](https://user-images.githubusercontent.com/37262132/92996864-c719dc80-f549-11ea-8559-66e4bf95eda9.JPG)       
        
-       - 내가 후원한 프로젝트 목록 보기    
+   - 내가 후원한 프로젝트 목록 보기    
        
-       - [프로젝트 후원](#2.-프로젝트-후원) 
+   - [프로젝트 후원](#2.-프로젝트-후원) 
 
 ![카테고리1](https://user-images.githubusercontent.com/37262132/92996883-ee70a980-f549-11ea-8fab-4958c6448b9f.JPG)
 ![카테고리2](https://user-images.githubusercontent.com/37262132/92996884-efa1d680-f549-11ea-95b3-7387bf88a061.JPG)
 
-       - 프로젝트 검색 및 조회    
+   - 프로젝트 검색 및 조회    
        
 ![문의](https://user-images.githubusercontent.com/37262132/92996909-2546bf80-f54a-11ea-9b40-604ea8eef23e.JPG)
 ![문의_답변](https://user-images.githubusercontent.com/37262132/92996910-25df5600-f54a-11ea-992b-3ffeb3ed50e9.JPG)
 ![문의글답변](https://user-images.githubusercontent.com/37262132/92996912-27108300-f54a-11ea-9fb9-14aef9eaa760.JPG)
        
-       - 프로젝트 문의글 작성 / 답변   
+   - 프로젝트 문의글 작성 / 답변   
        
 ## 5. 데이터베이스
 ![WHOWANT_ERD](https://user-images.githubusercontent.com/37262132/92991885-91f99400-f521-11ea-9e37-2c4d59696c43.JPG)
