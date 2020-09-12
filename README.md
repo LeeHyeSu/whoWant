@@ -7,16 +7,16 @@
 2020.04 ~ 2020.07 (4개월)
       
 ## 3. 구현 기술
-- FE : HTML5 CSS3 JavaScript Bootstrap 3.3.2
-- BE : Java JSP Spring MyBatis
-- DB : Oracle
+- FE : ```HTML5``` ```CSS3``` ```JavaScript``` ```Bootstrap 3.3.2```
+- BE : ```Java``` ```JSP``` ```Spring``` ```MyBatis```
+- DB : ```Oracle```
     
 ## 4. 프로젝트 주요 기능 및 사용자 기능
 ### 4-1. 프로젝트 주요 기능
 #### 1. 프로젝트 올리기
 ![메인화면](https://user-images.githubusercontent.com/37262132/92991605-10edcd00-f520-11ea-9cdd-79e2736bd221.png)
     
-        * 기본적으로 모든 일반 후원은 사이트에 프로젝트를 올려서 후원을 받을 수 있음
+        * 기본적으로 모든 회원은 프로젝트 올리기 가능
        
 ![프로젝트올리기1](https://user-images.githubusercontent.com/37262132/92991696-ab4e1080-f520-11ea-9d35-f3320166ac90.JPG)
 ![프로젝트올리기2](https://user-images.githubusercontent.com/37262132/92991704-b2751e80-f520-11ea-9462-2184a2b40f6e.JPG)
@@ -29,22 +29,23 @@
         * 후원 상품이 있을 경우 프로젝트 상품 구성 단계에서 상품 등록       
 
 ※ 후원 프로젝트는 펀딩 마감일까지 목표 금액이 100% 모이지 않으면 결제가 진행되지 않는다.        
-이는 도중에 프로젝트가 취소되거나 실패할 때를 대비하기 위함이다.        
-(이 프로젝트에서는 결제까지 진행하지 않으므로 계좌 등록을 하지 않음)
+  이는 도중에 프로젝트가 취소되거나 실패할 때를 대비하기 위함이다.        
+  (이 프로젝트에서는 결제까지 진행하지 않으므로 계좌 등록을 하지 않음)
 #### 2. 프로젝트 후원
 ![모든프로젝트](https://user-images.githubusercontent.com/37262132/92992122-6aa3c680-f523-11ea-88dd-5924dde8ccdb.JPG)
     
-     * 기본적으로 모든 일반 회원은 사이트에 올라온 프로젝트를 후원할 수 있음    
+       * 기본적으로 모든 회원은 프로젝트 후원 가능  
   
 ![후원1](https://user-images.githubusercontent.com/37262132/92991861-6c6c8a80-f521-11ea-9843-6b1b3915091c.JPG)
 ![후원2](https://user-images.githubusercontent.com/37262132/92991864-6e364e00-f521-11ea-9297-bcd78f6bdd1b.JPG)
      
-        * 상품을 선택하거나 상품을 선택하지 않고 후원할 수 있음
+       * 상품을 선택하거나 상품을 선택하지 않고 후원할 수 있음
        
 ![후원3](https://user-images.githubusercontent.com/37262132/92991870-75f5f280-f521-11ea-8a3d-f1079b42b63d.JPG)
-![후원4](https://user-images.githubusercontent.com/37262132/92991871-77271f80-f521-11ea-9136-83d454e035e3.JPG)
-    
+      
        * 후원 금액과 요청사항을 입력한 후 후원자 정보 및 배송지 확인    
+      
+![후원4](https://user-images.githubusercontent.com/37262132/92991871-77271f80-f521-11ea-9136-83d454e035e3.JPG)
       
        * 결제 수단을 선택한 후 후원하기      
       
@@ -103,9 +104,9 @@
 - 관리자 페이지 없음
     
 ## 7. 배운 점
-- Spring Framework 및 관련 기술들을 이용하여 시스템 분석 및 설계부터 구현까지 개발 과정을 경험      
+- Spring Framework 및 관련 기술들을 이용하여 ```시스템 분석 및 설계부터 구현```까지 개발 과정을 경험      
      
 - 자기주도 학습 및 문제해결 능력 함양
        
-- 팀 활동 과정을 통해 동료들과의 협업 능력과 리더십 향상
+- 팀 활동 과정을 통해 ```동료들과의 협업 능력```과 리더십 향상
        
